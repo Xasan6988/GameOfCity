@@ -1,0 +1,30 @@
+body {
+	background-color: #75789B;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.description {
+	margin: 20px;
+	font-size: 20px;
+	text-align: center;
+}
+.score {
+	border: 2px dotted red;
+	width: 30px;
+	height: 30px;
+	font-size: 22px;
+	text-align: center;
+}
+#field {
+	display: block;
+	width: 200px;
+	height: 20px;
+	margin: 50px auto;
+}
+#message {
+	margin: auto;
+	font-size: 20px;
+	text-align: center;
+}
+
