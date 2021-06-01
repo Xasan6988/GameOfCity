@@ -30,7 +30,7 @@ field.addEventListener('keydown', function(e) {
       result.push(field.value.trim());
       lastSym = field.value.charAt(field.value.trim().length - 1);
       if (lastSym === 'ь' || lastSym === 'ъ' || lastSym === 'ы') {
-        lastSym = field.value.trim().charAt(field.value.length - 2);
+        lastSym = field.value.trim().charAt(field.value.trim().length - 2);
       }
       message.textContent = `Слово принято! Следующее слово должно быть на букву \"${lastSym}\"`;
       field.value = '';
