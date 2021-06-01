@@ -7,7 +7,14 @@ let i = 0;
 
 const isValidCity = (newCity, oldCity = newCity) => {
   if (result.length != 0) {
-    return newCity.toLowerCase().charAt(0) === oldCity.toLowerCase().charAt(oldCity.length - 1);
+    let newCitySym = newCity.toLowerCase().charAt(0);
+    let oldCitySym = oldCity.toLowerCase().charAt(oldCity.length - 1);
+    console.log(oldCitySym);
+    if (oldCitySym === 'ь' || oldCitySym === 'ъ' || oldCitySym === 'ы') {
+      oldCitySym = oldCity.toLowerCase().charAt(oldCity.length - 2);
+    }
+    console.log(oldCitySym);
+    return  newCitySym === oldCitySym;
   } else {
     return true;
   }
@@ -22,6 +29,9 @@ field.addEventListener('keydown', function(e) {
     if (isValidCity(field.value, result[result.length - 1]) && isNewCity(field.value)) {
       result.push(field.value);
       lastSym = field.value.charAt(field.value.length - 1);
+      if (lastSym === 'ь' || lastSym === 'ъ' || lastSym === 'ы') {
+        lastSym = field.value.charAt(field.value.length - 2)
+      }
       message.textContent = `Слово принято! Следующее слово должно быть на букву \"${lastSym}\"`;
       field.value = '';
       score.textContent = ++i;
