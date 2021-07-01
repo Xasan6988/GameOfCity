@@ -42,5 +42,3 @@ field.addEventListener('keydown', function(e) {
     }
   }
 });
-
-
